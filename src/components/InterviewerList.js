@@ -6,15 +6,15 @@ export default function InterviewList(props) {
 	const interviewers = props.interviewers.map(interviewer => {
 		return (
 			<InterviewerListItem
-				id={interviewer.id}
+				key={interviewer.id}
 				name={interviewer.name}
 				avatar={interviewer.avatar}
 				selected={interviewer.id === props.interviewer}
-				setInterviewer={props.setInterviewer}
+				setInterviewer={(event) => props.setInterviewer(interviewer.id)}
 			/>
 		);
 	});
-	// return interviewers;
+
 	return (
 		<section className="interviewers">
 			<h4 className="interviewers__header text--light">Interviewer</h4>
@@ -23,5 +23,4 @@ export default function InterviewList(props) {
 			</ul>
 		</section>
 	);
-
 }
