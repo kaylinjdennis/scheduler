@@ -9,3 +9,12 @@ export function getAppointmentsForDay(state, day) {
 	}
 	return appointments;
 }
+
+export function getInterview(state, interview) {
+	const interviewObj = interview;
+	if (interviewObj) {
+		interviewObj.interviewer = state.interviewers[interview.interviewer];
+		return interviewObj;
+	}
+	return null;
+};
