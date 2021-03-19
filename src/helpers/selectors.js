@@ -18,3 +18,15 @@ export function getInterview(state, interview) {
 	}
 	return null;
 };
+
+export function getInterviewersForDay(state, day) {
+	const correctDay = state.days.filter(currentDay => currentDay.name === day)[0];
+	if (!correctDay) {
+		return [];
+	}
+	let interviewers = [];
+	for (const interviewer of correctDay.interviewers) {
+		interviewers.push(state.interviewers[interviewer]);
+	}
+	return interviewers;
+}
