@@ -4,7 +4,7 @@ import axios from 'axios';
 import 'components/Application.scss';
 import DayList from './DayList';
 import Appointment from 'components/Appointment/index';
-import { getAppointmentsForDay } from 'helpers/selectors';
+import { getAppointmentsForDay, getInterview } from 'helpers/selectors';
 
 export default function Application(props) {
 	const [state, setState] = useState({
@@ -34,6 +34,7 @@ export default function Application(props) {
 			<Appointment
 				key={appointment.id}
 				{...appointment}
+				interview={interview}
 			/>
 		)
 	});
