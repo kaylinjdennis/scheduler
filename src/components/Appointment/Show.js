@@ -1,6 +1,10 @@
 import React from 'react';
 
 export default function Show(props) {
+	// console.log('props', props);
+	if (!props.interviewer) {
+		return <div>Checking</div>;
+	}
 	return (
 		<main className="appointment__card appointment__card--show">
 			<section className="appointment__card-left">

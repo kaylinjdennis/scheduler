@@ -1,32 +1,33 @@
 export function getAppointmentsForDay(state, day) {
-	const correctDay = state.days.filter(currentDay => currentDay.name === day)[0];
-	if (!correctDay) {
-		return [];
-	}
-	let appointments = [];
-	for (const appointment of correctDay.appointments) {
-		appointments.push(state.appointments[appointment]);
-	}
-	return appointments;
+	const outputArr = [];
+	state.days.forEach((singleday) => {
+		if (day === singleday.name) {
+			singleday.appointments.forEach((e) => {
+				outputArr.push(state.appointments[e]);
+			});
+		}
+	});
+	return outputArr;
 }
 
 export function getInterview(state, interview) {
-	const interviewObj = interview;
-	if (interviewObj) {
-		interviewObj.interviewer = state.interviewers[interview.interviewer];
-		return interviewObj;
+	if (interview === null) {
+		return null;
 	}
-	return null;
-};
+	let outputObj = {};
+	outputObj.student = interview.student;
+	outputObj.interviewer = state.interviewers[interview.interviewer];
+	return outputObj;
+}
 
 export function getInterviewersForDay(state, day) {
-	const correctDay = state.days.filter(currentDay => currentDay.name === day)[0];
-	if (!correctDay) {
-		return [];
-	}
-	let interviewers = [];
-	for (const interviewer of correctDay.interviewers) {
-		interviewers.push(state.interviewers[interviewer]);
-	}
-	return interviewers;
+	const outputArr = [];
+	state.days.forEach((singleday) => {
+		if (day === singleday.name) {
+			singleday.interviewers.forEach((e) => {
+				outputArr.push(state.interviewers[e]);
+			});
+		}
+	});
+	return outputArr;
 }
