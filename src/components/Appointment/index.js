@@ -33,7 +33,7 @@ export default function Appointment(props) {
 			{mode === EMPTY &&
 				<Empty
 					onAdd={() => {
-						// console.log("Clicked onAdd");
+						console.log("Clicked onAdd");
 						transition(CREATE);
 					}}
 				/>
