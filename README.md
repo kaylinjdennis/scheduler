@@ -22,6 +22,12 @@ npm test
 npm run storybook
 ```
 
+![](https://github.com/kaylinjdennis/scheduler/blob/master/docs/appointment-show.png?raw=true)
+
+![](https://github.com/kaylinjdennis/scheduler/blob/master/docs/appointment-form.png?raw=true)
+
+![](https://github.com/kaylinjdennis/scheduler/blob/master/docs/appointment-delete.png?raw=true)
+
 # Functional Requirements
 
 - Development focuses on a single page application (SPA) called Interview Scheduler, built using React.
