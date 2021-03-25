@@ -53,6 +53,7 @@ const fixtures = {
 	}
 };
 
+// Mock axios requests for Jest tests
 export default {
 	get: jest.fn(url => {
 		if (url === '/api/days') {

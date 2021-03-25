@@ -48,6 +48,7 @@ export default function Appointment(props) {
 	};
 
 	return (
+		// Create appointment based on the current mode
 		<article className='appointment' data-testid='appointment'>
 			<Header time={props.time} />
 			{mode === EMPTY &&
